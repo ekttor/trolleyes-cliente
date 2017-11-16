@@ -99,8 +99,7 @@
                                                         <select class="navbar-form navbar-left" ng-model="filterType" convert-to-number id="filterSelection">
                                                             <option value="0">Filtrar por dni, nombre, primer apellido, segundo apellido o login</option>
                                                             <option value="1">Filtrar por id</option>
-
-
+                                                                                                                       
                                                         </select>
                                                     </form>
                                                 </div>
@@ -126,7 +125,6 @@
                                                             filterparams="filterParams">
                                                         </cplistfilterbynumber>
                                                     </div>
-                                                    <p></p>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +160,7 @@
                                                     <li><input type="checkbox" ng-model="visibles.descripcion" ng-checked="visibles.descripcion" >Descripción</li>
                                                     <li><input type="checkbox" ng-model="visibles.existencias" ng-checked="visibles.existencias" >Existencias</li>
                                                     <li><input type="checkbox" ng-model="visibles.precio" ng-checked="visibles.precio" >Precio</li>
-
+                                                  
                                                 </ul>
                                             </div>
                                         </div>
@@ -193,22 +191,28 @@
                                                     <a ng-click="doorder('precio', 'asc')"><i class="glyphicon glyphicon-arrow-up"></i></a>
                                                     <a ng-click="doorder('precio', 'desc')"><i class="glyphicon glyphicon-arrow-down"></i></a>
                                                 </th>
-
                                                 <th  class="text-center">Acciones</th>
                                             </tr>
                                             <tbody>
                                                 <tr ng-repeat="obj in page| filter:searchText">
                                                     <td ng-show="visibles.id"><b>{{obj.id}}</b></td>
-                                                    <td ng-show="visibles.codigo"><b>{{obj.codigo}}</b></td>
-                                                    <td ng-show="visibles.descripcion">{{obj.descripcion}}</td>
-                                                    <td ng-show="visibles.existencias">{{obj.existencias}}</td>
-                                                    <td ng-show="visibles.precio">{{obj.precio}}</td>
-                                                    
+                                                    <td ng-show="visibles.dni"><b>{{obj.dni}}</b></td>
+                                                    <td ng-show="visibles.nombre">{{obj.nombre}}</td>
+                                                    <td ng-show="visibles.primer_apellido">{{obj.primer_apellido}}</td>
+                                                    <td ng-show="visibles.segundo_apellido">{{obj.segundo_apellido}}</td>
+                                                    <td ng-show="visibles.login">{{obj.login}}</td>
+                                                    <td ng-show="visibles.email">{{obj.email}}</td>
+                                                    <td ng-show="visibles.fecha_nacimiento">{{obj.fecha_nacimiento}}</td>
+                                                    <td ng-show="visibles.id_tipousuario" class="text-center">
+                                                        <a href="tipousuario/{{profile}}/view/{{obj.obj_tipousuario.id}}">{{obj.obj_tipousuario.descripcion}}</a>
+                                                    </td>
                                                     <td>
                                                         <div class="btn-toolbar" role="toolbar">
                                                             <div class="btn-group">
                                                                 <actions id="obj.id" name="ob"></actions>
-                                                                
+                                                                <a class="btn btn-default btn-xs" title="Pedidos" href="pedido/{{profile}}/plistXusuario/{{obj.id}}/1/10">
+                                                                    <span ng-class="objectService.getIcon('pedido')"></span>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </td>
