@@ -35,13 +35,19 @@ moduloServicios.factory('objectService', function () {
                     break;
                 case "tipousuario":
                     return 'fa fa-user-o';
-                    break;              
+                    break;
                 case "pedido":
                     return 'fa fa-sticky-note-o ';
-                    break;              
-                    case "producto":
+                    break;
+                case "producto":
                     return 'fa fa-bicycle ';
-                    break; 
+                    break;
+                case "linea_pedido":
+                    return ' fa fa-exchange ';
+                    break;
+                case "carrito":
+                    return ' fa fa-shopping-cart ';
+                    break;
                 default:
                     return null;
             }
@@ -53,13 +59,19 @@ moduloServicios.factory('objectService', function () {
                     break;
                 case "tipousuario":
                     return "Tipo de usuario";
-                    break;               
+                    break;
                 case "pedido":
                     return "Pedido";
                     break;
                 case "producto":
                     return "Producto";
-                    break;  
+                    break;
+                case "linea_pedido":
+                    return "Linea de pedido";
+                    break;
+                case "carrito":
+                    return "Carrito";
+                    break;
                 default:
                     return null;
             }
